@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Pembelian {
 
-    // pub
+
     public static int pilihPenerbangan;
     public static ArrayList<Penerbangan> dataPenerbangan;
 
@@ -38,11 +38,11 @@ public class Pembelian {
    
     public static void beliTiket(){
         Scanner sc = new Scanner(System.in);
-        System.out.print("NIK   :");
+        System.out.print("NIK            :");
         Penumpang.setNik(sc.nextLine());
-        System.out.print("NAMA DEPAN   :");
+        System.out.print("NAMA DEPAN     :");
         Penumpang.setNamaDepan(sc.nextLine());
-        System.out.print("NAMA BELAKANG   :");
+        System.out.print("NAMA BELAKANG  :");
         Penumpang.setNamaBelakang(sc.nextLine());
         Penumpang.tampilDafarPenumpang();
 
@@ -58,7 +58,7 @@ public class Pembelian {
     public static void main(String[] args) throws Exception {
         dataPenerbangan = new ArrayList<>();
         dataPenerbangan.add(new Penerbangan("GA101", "CGK, Jakarta", "DPS, Bali", "06.30", "08.15", 120000000));
-        dataPenerbangan.add(new Penerbangan("GA102", "CGK, Jakarta", "DPS, Bali", "06.30", "08.15", 120000000));
+        dataPenerbangan.add(new Penerbangan("GA102", "SUB, SURABAYA", "KNO, Medan", "09.30", "11.15", 135000000));
         
         Scanner sc = new Scanner(System.in);
         int chooseMenu;

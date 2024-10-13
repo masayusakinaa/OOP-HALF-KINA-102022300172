@@ -37,9 +37,9 @@ public class Penerbangan {
     }
 
     public void tampilDaftarPenerbangan(){
-        System.out.println("Nomor Penerbangan : "+nomorPenerbangan);
+        System.out.println("Nomor Penerbangan     : "+nomorPenerbangan);
         System.out.println("Bandara Keberangkatan : "+bandaraKeberangkatan+"----> Bandara Tujuan : "+bandaraTujuan);
-        System.out.println("Waktu Keberangkatan : "+waktuKeberangkatan+"----> Waktu Kedatangan : "+waktuKedatangan);
-        System.out.println("Harga Tiket : Rp."+hargaTiket);        
+        System.out.println("Waktu Keberangkatan   : "+waktuKeberangkatan+"----> Waktu Kedatangan : "+waktuKedatangan);
+        System.out.println("Harga Tiket           : Rp."+hargaTiket);        
     }
 }

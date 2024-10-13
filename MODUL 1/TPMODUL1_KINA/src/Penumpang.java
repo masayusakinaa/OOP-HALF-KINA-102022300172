@@ -16,8 +16,8 @@ public class Penumpang {
     
     public static void tampilDafarPenumpang(){
         System.out.println();
-        System.out.println("NIK : "+nik);
-        System.out.println("Nama Depan : "+namaDepan);
+        System.out.println("NIK           : "+nik);
+        System.out.println("Nama Depan    : "+namaDepan);
         System.out.println("Nama Belakang : "+namaBelakang);
     }
 }
