@@ -26,7 +26,7 @@ public class ManajemenInventaris {
 
         // Todo : Create a new object for MakananKering
         MakananKering makananKering = new MakananKering( nama,  jumlah,  harga,  brand);
-        
+        daftarMakananKering.add(makananKering);
         // Todo : Create Print Notifitaction "Makanan kering berhasil ditambahkan"
         System.out.println("Makanan Kering berhasil ditambahkan!");
     }
@@ -36,19 +36,18 @@ public class ManajemenInventaris {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Nama Makanan: ");
-        String nama = (scanner.nextLine());
-
+        String nama = scanner.nextLine();
         System.out.println("Jumlah: ");
-        int jumlah = (scanner.nextInt());
-
+        int jumlah = scanner.nextInt();
         System.out.print("Harga: ");
-        double harga = (scanner.nextDouble());
-
+        double harga = scanner.nextDouble();
         System.out.println("bahan: ");
-        String bahan= (scanner.nextLine());
+        String bahan= scanner.nextLine();
+    
 
         // Todo : Create a new object for MakananBasah
         MakananBasah makananBasah = new MakananBasah( nama,  jumlah,  harga,  bahan);
+        daftarMakananBasah.add(makananBasah);
         // Todo :Create Print Notifitaction "Makanan Basah berhasil ditambahkan"
         System.out.println("Makanan Basah berhasil ditambahkan!");
     }
@@ -60,11 +59,15 @@ public class ManajemenInventaris {
             System.out.println("Maaf nmakanan tidak ada");
         } else {
             // Todo : Create print notification for Makanan Kering  
-            for 
+            for (MakananKering makananKeringnew : daftarMakananKering) {
+                makananKeringnew.mknkrg();
             }
+            
             // Todo : Create print notification for  Makanan Basah
-            for 
+            for  (MakananBasah makananBasahnew : daftarMakananBasah) {
+                makananBasahnew.mknbsh();
             }
-        }
+            }
+        
     }
 }
