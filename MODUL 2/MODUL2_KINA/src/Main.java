@@ -22,7 +22,7 @@ public class Main {
         System.out.println();
 
         // To do: Buatlah sebuah Objek baru dari class KomputerPremium
-        KomputerPremium komputerPremium = new KomputerPremium(23, "warnet gaming rawr", 10000, true);
+        KomputerPremium komputerPremium = new KomputerPremium(23, "warnet gaming rawr", 10000, tru);
         // To do: Panggillah Method Informasi dari class KomputerPremium
         System.out.println();
         komputerPremium.Informasi();
