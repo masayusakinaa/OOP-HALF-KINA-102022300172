@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 public class InventoryController {
 
     private String artistName, albumTitle;
-    private int totalCopies, rentedCopies;
+    private int totalCopies, rentCopies;
 
     @FXML
     private Button btnAdd;
@@ -30,10 +30,10 @@ public class InventoryController {
     private TextField txtAlbum;
 
     @FXML
-    private Button btnRented;
+    private Button btnRent;
 
     @FXML
-    private TextField txtRented;
+    private TextField txtRent;
 
     @FXML
     private TextField txtTotal;
@@ -54,7 +54,7 @@ public class InventoryController {
     private TableColumn<Album, Integer> colTotalCopies;
 
     @FXML
-    private TableColumn<Album, Integer> colRentedCopies;
+    private TableColumn<Album, Integer> colRentCopies;
 
     private ObservableList<Album> albumList = FXCollections.observableArrayList();
 
@@ -63,7 +63,7 @@ public class InventoryController {
             colAlbumTitle.setCellValueFactory(new PropertyValueFactory<>("albumName"));
             colArtist.setCellValueFactory(new PropertyValueFactory<>("artist"));
             colTotalCopies.setCellValueFactory(new PropertyValueFactory<>("total"));
-            colRentedCopies.setCellValueFactory(new PropertyValueFactory<>("rented"));
+            colRentCopies.setCellValueFactory(new PropertyValueFactory<>("rented"));
             albumTable.setItems(albumList);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -76,9 +76,9 @@ public class InventoryController {
             artistName = txtArtist.getText();
             albumTitle = txtAlbum.getText();
             totalCopies = Integer.parseInt(txtTotal.getText());
-            rentedCopies = Integer.parseInt(txtRented.getText());
+            rentCopies = Integer.parseInt(txtRent.getText());
 
-            Album newAlbum = new Album(artistName, albumTitle, totalCopies, rentedCopies);
+            Album newAlbum = new Album(artistName, albumTitle, totalCopies, rentCopies);
             albumList.add(newAlbum);
             clearFields();
 
@@ -114,13 +114,13 @@ public class InventoryController {
             albumTitle = txtAlbum.getText();
             artistName = txtArtist.getText();
             totalCopies = Integer.parseInt(txtTotal.getText());
-            rentedCopies = Integer.parseInt(txtRented.getText()) + 1;
+            rentCopies = Integer.parseInt(txtRent.getText()) + 1;
 
             totalCopies -= 1;
 
             for (Album album : albumList) {
                 if (album.getAlbumName().equals(albumTitle)) {
-                    Album updatedAlbum = new Album(artistName, albumTitle, totalCopies, rentedCopies);
+                    Album updatedAlbum = new Album(artistName, albumTitle, totalCopies, rentCopies);
                     albumList.set(albumList.indexOf(album), updatedAlbum);
                     clearFields();
                     showAlert(AlertType.INFORMATION, "Rent Album", "Album " + albumTitle + " has been rented!");
@@ -138,13 +138,13 @@ public class InventoryController {
             artistName = txtArtist.getText();
             albumTitle = txtAlbum.getText();
             totalCopies = Integer.parseInt(txtTotal.getText());
-            rentedCopies = Integer.parseInt(txtRented.getText());
+            rentCopies = Integer.parseInt(txtRent.getText());
 
             txtAlbum.setEditable(false);
 
             for (Album album : albumList) {
                 if (album.getAlbumName().equals(albumTitle)) {
-                    Album updatedAlbum = new Album(artistName, albumTitle, totalCopies, rentedCopies);
+                    Album updatedAlbum = new Album(artistName, albumTitle, totalCopies, rentCopies);
                     albumList.set(albumList.indexOf(album), updatedAlbum);
                     clearFields();
                     showAlert(AlertType.INFORMATION, "Update Album", "Album " + albumTitle + " has been updated!");
@@ -163,7 +163,7 @@ public class InventoryController {
             if (selectedAlbum != null) {
                 txtAlbum.setText(selectedAlbum.getAlbumName());
                 txtArtist.setText(selectedAlbum.getArtist());
-                txtRented.setText(String.valueOf(selectedAlbum.getRented()));
+                txtRent.setText(String.valueOf(selectedAlbum.getRent()));
                 txtTotal.setText(String.valueOf(selectedAlbum.getTotal()));
             }
         }
@@ -173,7 +173,7 @@ public class InventoryController {
         txtAlbum.clear();
         txtArtist.clear();
         txtTotal.clear();
-        txtRented.clear();
+        txtRent.clear();
         txtAlbum.setEditable(true);
         txtArtist.setEditable(true);
         txtTotal.setEditable(true);

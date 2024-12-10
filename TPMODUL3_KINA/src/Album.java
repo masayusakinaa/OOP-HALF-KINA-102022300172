@@ -2,13 +2,13 @@ public class Album {
     private String artist;
     private String albumName;
     private int total; 
-    private int rented;
+    private int rent;
     
-    public Album(String artist, String albumName, int total, int rented) {
+    public Album(String artist, String albumName, int total, int rent) {
         this.artist = artist;
         this.albumName = albumName;
         this.total = total;
-        this.rented = rented;
+        this.rent = rent;
     }
     
     public String getArtist() {
@@ -29,10 +29,10 @@ public class Album {
     public void setTotal(int total) {
         this.total = total;
     }
-    public int getRented() {
-        return rented;
+    public int getRent() {
+        return rent;
     }
-    public void setRented(int rented) {
-        this.rented = rented;
+    public void setRent(int rent) {
+        this.rent = rent;
     }
 }

@@ -35,7 +35,7 @@ public class LoginController {
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             if (usernameInput.equals("Kina") && passwordInput.equals("2322")) {
-                System.out.println("Login berhasil. Mengarahkan ke halaman Inventory...");
+                System.out.println("Login berhasil. Mengarahkan ke halaman Inventory.");
                 currentStage.setScene(inventoryScene);
                 currentStage.show();
             } else {
